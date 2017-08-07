@@ -8,7 +8,7 @@ response1 = urllib.request.urlopen(url)
 print(response1.getcode())
 print(response1.read())
 
-print('第二种方法')
+print('第二种方法 ')
 request = urllib.request.Request(url)
 request.add_header("user-agent","Mozilla/5.0")
 response2 = urllib.request.urlopen(request)
