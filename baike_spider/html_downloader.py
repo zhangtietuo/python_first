@@ -8,4 +8,5 @@ class HtmlDownloader(object):
         response = urllib.request.urlopen(url)
         if response.getcode() != 200:
             return None
-        return response.read()
+        #print(str(response.read(),'utf-8'))
+        return str(response.read(),'utf-8')

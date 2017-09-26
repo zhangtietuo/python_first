@@ -1,6 +1,6 @@
 # html解析器
 import re
-import urllib.parse
+import urllib
 
 from bs4 import BeautifulSoup
 
@@ -17,10 +17,10 @@ class HtmlParser(object):
 
     def get_new_urls(self,url,soup):
         new_urls = set()
-        links = soup.find_all('a', href=re.compile(r'/item/\d+'))
+        links = soup.find_all('a', href=re.compile(r'/item/.+'))
         for link in links:
             new_url = link['href']
-            new_full_url = urllib.urlparse.urljoin(url, new_url)
+            new_full_url = urllib.parse.urljoin(url, new_url)
             new_urls.add(new_full_url)
 
         return new_urls

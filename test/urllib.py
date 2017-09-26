@@ -6,7 +6,7 @@ url = "https://www.htouhui.com"
 print ('第一种方法')
 response1 = urllib.request.urlopen(url)
 print(response1.getcode())
-print(response1.read())
+print(str(response1.read(),'utf-8'))
 
 print('第二种方法 ')
 request = urllib.request.Request(url)
